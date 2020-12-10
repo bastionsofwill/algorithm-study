@@ -1,6 +1,15 @@
 import java.util.Scanner;
 
 public class Picnic {
+    public static int findNextSrc(int[] statusArray) {
+        int ret = 0;
+        for(int el : statusArray) {
+            if(el == 0) {
+                return ret;
+            } else ret++;
+        }
+        return -1;
+    }
     public static int recursiveMatch(int[] statusArray, int src, int[][] friendshipArray) {
         int numMatched = 0;
         for(int el : statusArray) {
@@ -10,16 +19,16 @@ public class Picnic {
             return 1;
         }
         int ans = 0;
-        int nextSrc = -1;
+        int nextSrc;
         int[] updatedStatusArray = statusArray.clone();
         for(int dst = src + 1; dst < statusArray.length; dst++) {
-            if(friendshipArray[src][dst] == 1) {
-                nextSrc = ((nextSrc == -1) ? dst + 1 : nextSrc);
+            if(friendshipArray[src][dst] == 1 && statusArray[dst] == 0) {
                 updatedStatusArray[src] = 1;
                 updatedStatusArray[dst] = 1;
+                nextSrc = findNextSrc(updatedStatusArray);
                 ans += recursiveMatch(updatedStatusArray, nextSrc, friendshipArray);
-            } else {
-                nextSrc = ((nextSrc == -1) ? dst : nextSrc);
+                updatedStatusArray[src] = 0;
+                updatedStatusArray[dst] = 0;
             }
         }
         return ans;
