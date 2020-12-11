@@ -1,23 +1,14 @@
 import java.util.Scanner;
 
 public class Boardcover {
-    public static void printBoard(boolean[][] gameBoard) {
-        for(boolean[] row : gameBoard) {
-            for(boolean el : row) {
-                if(el) System.out.print(".");
-                else System.out.print("#");
-            }
-            System.out.println();
-        }
-    }
     public static int[] findNextSrc(boolean[][] gameBoard) {
         int[] nextSrc = new int[2];
-        for(int r = 0; r < gameBoard.length - 1; r++) {
-            for(int c = 0; c < gameBoard[0].length - 1; c++) {
+        for(int r = 0; r < gameBoard.length; r++) {
+            for(int c = 0; c < gameBoard[0].length; c++) {
                 if(gameBoard[r][c]) {
                     nextSrc[0] = r;
                     nextSrc[1] = c;
-                    System.out.println("newsrc: " + r + " " + c);
+                    System.out.println("nextSrc: " + r + " " + c);
                     return nextSrc;
                 }
             }
@@ -38,13 +29,17 @@ public class Boardcover {
                            {{0, 1}, {1, 1}}};
         newBoard[r][c] = false;
         for(int[][] block : delta) {
-            if(gameBoard[r + block[0][0]][c + block[0][1]] && gameBoard[r + block[1][0]][c + block[1][1]]) {
-                newBoard[r + block[0][0]][c + block[0][1]] = false;
-                newBoard[r + block[1][0]][c + block[1][1]] = false;
-                printBoard(newBoard);
+            int nr0 = r + block[0][0];
+            int nc0 = c + block[0][1];
+            int nr1 = r + block[1][0];
+            int nc1 = c + block[1][1];
+            boolean isIndexOutOfBound = (nr0 < 0 || nc0 < 0 || nr1 < 0 || nc1 < 0 || nr0 >= gameBoard.length || nc0 >= gameBoard[0].length || nr1 >= gameBoard.length || nc1 >= gameBoard[0].length) ? true : false;
+            if(!isIndexOutOfBound && gameBoard[nr0][nc0] && gameBoard[nr1][nc1]) {
+                newBoard[nr0][nc0] = false;
+                newBoard[nr1][nc1] = false;
                 ans += recursiveCover(newBoard, numEmpty - 3);
-                newBoard[r + block[0][0]][c + block[0][1]] = true;
-                newBoard[r + block[1][0]][c + block[1][1]] = true;
+                newBoard[nr0][nc0] = true;
+                newBoard[nr1][nc1] = true;   
             }
         }
         newBoard[r][c] = true;        
@@ -52,14 +47,13 @@ public class Boardcover {
     }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int T = Integer.parseInt(scanner.nextLine());
+        int T = scanner.nextInt();
         int H, W, r, c;
         int numEmpty = 0;
-        String[] boardSize;
         for(int testcase = 0; testcase < T; testcase++) {
-            boardSize = scanner.nextLine().split(" ");
-            H = Integer.parseInt(boardSize[0]);
-            W = Integer.parseInt(boardSize[1]);
+            H = scanner.nextInt();
+            W = scanner.nextInt();
+            scanner.nextLine();
             boolean[][] gameBoard = new boolean[H][W];
             for(r = 0; r < H; r++) {
                 char[] row = scanner.nextLine().toCharArray();
