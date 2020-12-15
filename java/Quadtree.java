@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class Quadtree {
     public static String reverseQuadTree(String input) {
-        if(input.length() == 1) return input;
         char firstLetter = input.charAt(0);
         if(firstLetter != 'x') {
             return Character.toString(firstLetter);
