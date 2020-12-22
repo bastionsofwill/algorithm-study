@@ -14,15 +14,17 @@ public class Wildcard {
         for(wIndex = 0; wIndex < wLen; wIndex++) {
             if(isAsterisk(wildcardString)) return true;
             if(wildcardString.charAt(wIndex) == '*') {
-                for(int subFileIndex = fLen - 1; subFileIndex > fIndex; subFileIndex--) {
-                    if(isPattern(wildcardString.substring(wIndex + 1), fileName.substring(subFileIndex))) return true;
-                }
-                return false;
+                if(wIndex == wLen - 1) return true;
+                for(int subFileIndex = fLen - 1; subFileIndex >= fIndex; subFileIndex--) {                
+                    if(isPattern(wildcardString.substring(wIndex + 1), fileName.substring(subFileIndex))) {
+                        return true;
+                    }
+                } return false;
             }
             if(wildcardString.charAt(wIndex) == fileName.charAt(fIndex) || wildcardString.charAt(wIndex) == '?') {
                 fIndex++;
                 if(fIndex == fLen) break;
-            }
+            } else return false;
         }
         if(wIndex == wLen - 1 && fIndex == fLen) return true;
         else if(fIndex != fLen) return false;
@@ -43,7 +45,7 @@ public class Wildcard {
             }
             fileList.sort(null);
             for(int i = 0; i < N; i++) {
-                isPattern(wildcardString, fileList.get(i));
+                if(isPattern(wildcardString, fileList.get(i))) System.out.println(fileList.get(i));
             }
         }
         scanner.close();
