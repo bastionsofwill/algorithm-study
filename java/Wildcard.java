@@ -15,11 +15,7 @@ public class Wildcard {
             if(isAsterisk(wildcardString)) return true;
             if(wildcardString.charAt(wIndex) == '*') {
                 if(wIndex == wLen - 1) return true;
-                for(int subFileIndex = fLen - 1; subFileIndex >= fIndex; subFileIndex--) {                
-                    if(isPattern(wildcardString.substring(wIndex + 1), fileName.substring(subFileIndex))) {
-                        return true;
-                    }
-                } return false;
+                return isPattern(wildcardString.substring(wIndex + 1), fileName.substring(fIndex)) || (fIndex < fLen - 1 && isPattern(wildcardString.substring(wIndex), fileName.substring(fIndex + 1)));
             }
             if(wildcardString.charAt(wIndex) == fileName.charAt(fIndex) || wildcardString.charAt(wIndex) == '?') {
                 fIndex++;
