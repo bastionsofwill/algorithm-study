@@ -21,7 +21,7 @@ public class BOJ1011 {
             int pPos = pWarpState.pos;
             int pLastMoved = pWarpState.lastMoved;
             int pDepth = pWarpState.depth;
-            System.out.println(pPos + " " + pLastMoved + " " + pDepth);
+            // System.out.println(pPos + " " + pLastMoved + " " + pDepth);
             if(pPos == src - 1 && (pLastMoved == 2 || pLastMoved == 1)) return pDepth;
             if(pPos > src) warp(pPos, pLastMoved, pDepth);
         }
