@@ -22,15 +22,15 @@ public class BOJ1011 {
             int pLastMoved = pWarpState.lastMoved;
             int pDepth = pWarpState.depth;
             System.out.println(pPos + " " + pLastMoved + " " + pDepth);
-            if(pPos == src) return pDepth;
+            if(pPos == src - 1 && (pLastMoved == 2 || pLastMoved == 1)) return pDepth;
             if(pPos > src) warp(pPos, pLastMoved, pDepth);
         }
         return -1;
     }
     public void warp(int pos, int lastMoved, int depth) {
-        if(lastMoved > 1) q.add(new warpState(pos - (lastMoved - 1), lastMoved - 1, depth + 1));
-        if(lastMoved > 0) q.add(new warpState(pos - lastMoved, lastMoved, depth + 1));
         q.add(new warpState(pos - (lastMoved + 1), lastMoved + 1, depth + 1));
+        if(lastMoved > 0) q.add(new warpState(pos - lastMoved, lastMoved, depth + 1));
+        if(lastMoved > 1) q.add(new warpState(pos - (lastMoved - 1), lastMoved - 1, depth + 1));        
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
