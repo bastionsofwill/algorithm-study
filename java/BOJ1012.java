@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
 public class BOJ1012 {
-    public int N, M;
+    public int M, N;
     public boolean[][] field;
-    public BOJ1012(int N, int M, boolean[][] f) {
-        this.N = N;
+    public BOJ1012(int M, int N, boolean[][] f) {
         this.M = M;
+        this.N = N;
         this.field = f;
     }
     public void eatPest(int r, int c) {
@@ -31,18 +31,18 @@ public class BOJ1012 {
         Scanner sc = new Scanner(System.in);
         boolean[][] field;
         int T = sc.nextInt();
-        int N, M, K, x, y;
+        int M, N, K, x, y;
         for(int tc = 0; tc < T; tc++) {
-            N = sc.nextInt();
             M = sc.nextInt();
+            N = sc.nextInt();
             K = sc.nextInt();
             field = new boolean[N][M];
             for(int i = 0; i < K; i++) {
                 x = sc.nextInt();
                 y = sc.nextInt();
-                field[x][y] = true;
+                field[y][x] = true;
             }
-            BOJ1012 cabbagePatch = new BOJ1012(N, M, field);
+            BOJ1012 cabbagePatch = new BOJ1012(M, N, field);
             System.out.println(cabbagePatch.countWorm());
         }
         sc.close();
