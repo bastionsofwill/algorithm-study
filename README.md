@@ -3,6 +3,7 @@
 ## Daily BOJ
 | Date | Language | ID | Tag |
 |------|---|---|---|
+| 11/22 | java | 2630 | Divide-and-Conquer |
 | 11/21 | java | 9184 | DP |
 | 11/21 | java | 1015 | Sorting |
 | 11/20 | java | 1012 | DFS |
