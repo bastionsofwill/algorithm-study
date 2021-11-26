@@ -1,15 +1,15 @@
 # algorithm-study
 
 ## Daily BOJ
-| Date | Language | ID | Tag |
+| Date | Language | ID | Tag | Difficulty |
 |------|---|---|---|
-| 11/22 | java | 2630 | Divide-and-Conquer |
-| 11/21 | java | 9184 | DP |
-| 11/21 | java | 1015 | Sorting |
-| 11/20 | java | 1012 | DFS |
-| 11/19 | java | 1010 | Combination |
-| 11/18 | java | 2606 | Union-Find |
-| 11/17 | java | 1717 | Union-Find |
-| 11/16 | java | 1004 | Geometry |
-| 11/15 | java | 1003 | DP |
-| 11/14 | java | 1002 | Geometry |
+| 11/22 | java | 2630 | Divide-and-Conquer | S3 |
+| 11/21 | java | 9184 | DP | S2 |
+| 11/21 | java | 1015 | Sorting | S4 |
+| 11/20 | java | 1012 | DFS | S2 |
+| 11/19 | java | 1010 | Combination | S5 |
+| 11/18 | java | 2606 | Union-Find | S3 |
+| 11/17 | java | 1717 | Union-Find | G4 |
+| 11/16 | java | 1004 | Geometry | S3 |
+| 11/15 | java | 1003 | DP | S3 |
+| 11/14 | java | 1002 | Geometry | S4 |
