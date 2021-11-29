@@ -3,6 +3,7 @@
 ## Daily BOJ
 | Date | Language | ID | Tag | Difficulty |
 |------|---|---|---|---|
+| 11/23 | java | 1260 | GraphI(DFS/BFS) | S2 |
 | 11/22 | java | 2630 | Divide-and-Conquer | S3 |
 | 11/21 | java | 9184 | DP | S2 |
 | 11/21 | java | 1015 | Sorting | S4 |
