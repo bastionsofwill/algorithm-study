@@ -3,6 +3,7 @@
 ## Daily BOJ
 | Date | Language | ID | Tag | Difficulty |
 |------|---|---|---|---|
+| 11/28 | java | 1874 | Stack | S3 |
 | 11/27 | java | 4949 | Stack | S4 |
 | 11/26 | java | 9012 | Stack | S4 |
 | 11/25 | java | 10773 | Stack | S4 |
