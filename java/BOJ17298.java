@@ -14,7 +14,7 @@ public class BOJ17298 {
         Stack<Integer> toDo = new Stack<Integer>();
         Stack<Integer> greaterInts = new Stack<Integer>();
         Stack<Integer> ans = new Stack<Integer>();
-        int N = Integer.parseInt(sc.nextLine());
+        sc.nextLine();
         String[] inputArr = sc.nextLine().split(" ");
         sc.close();
         List<Integer> input = Arrays.stream(inputArr).map(e -> Integer.parseInt(e)).collect(Collectors.toList());
