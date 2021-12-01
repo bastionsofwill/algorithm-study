@@ -3,6 +3,7 @@
 ## Daily BOJ
 | Date | Language | ID | Tag | Difficulty |
 |------|---|---|---|---|
+| 12/02 | java | 1780 | Divide-and-Conquer | S2 |
 | 12/01 | java | 1992 | Divide-and-Conquer | S1 |
 | 11/30 | java | 2667 | DFS | S1 |
 | 11/29 | java | 17298 | Stack | G4 |
