@@ -3,6 +3,8 @@
 ## Daily BOJ
 | Date | Language | ID | Tag | Difficulty |
 |------|---|---|---|---|
+| 12/05 | java | 10830 | Divide-and-Conquer | G4 |
+| 12/04 | java | 2740 | Divide-and-Conquer | B1 |
 | 12/03 | java | 1629 | Divide-and-Conquer | S1 |
 | 12/02 | java | 1780 | Divide-and-Conquer | S2 |
 | 12/01 | java | 1992 | Divide-and-Conquer | S1 |
