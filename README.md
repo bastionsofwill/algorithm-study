@@ -3,6 +3,7 @@
 ## Daily BOJ
 | Date | Language | ID | Tag | Difficulty |
 |------|---|---|---|---|
+| 12/06 | java | 11401 | Number Theory | G1 |
 | 12/05 | java | 10830 | Divide-and-Conquer | G4 |
 | 12/04 | java | 2740 | Divide-and-Conquer | B1 |
 | 12/03 | java | 1629 | Divide-and-Conquer | S1 |
