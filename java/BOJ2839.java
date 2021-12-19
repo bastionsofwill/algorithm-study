@@ -6,16 +6,16 @@ public class BOJ2839 {
         if(N == 0) return 0;
         if(N < 3) return -1;
         if(cache[N] != 0) return cache[N];
-        int temp;
+        int ans;
         if(findNumOfBags(N - 5) == -1) {
-                temp = findNumOfBags(N - 3) + 1;
-                if(temp == 0) {
+                ans = findNumOfBags(N - 3) + 1;
+                if(ans == 0) {
                     cache[N] = -1;
                     return -1;
                 } 
-        } else temp = findNumOfBags(N - 5) + 1;
-        cache[N] = temp;
-        return temp;   
+        } else ans = findNumOfBags(N - 5) + 1;
+        cache[N] = ans;
+        return ans;
     }  
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
