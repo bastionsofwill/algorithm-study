@@ -3,6 +3,7 @@
 ## Programmers
 | Date | Language | ID | Tag | Difficulty |
 |------|---|---|---|---|
+| 22/02/11 | java | 42628 | Heap | Level 3 |
 | 22/02/09 | java | 42627 | Heap | Level 3 |
 
 ## Daily BOJ
